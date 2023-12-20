@@ -84,7 +84,7 @@ var AScene = require('./core/scene/a-scene').AScene;
 var ANode = require('./core/a-node').ANode;
 var AEntity = require('./core/a-entity').AEntity; // Depends on ANode and core components.
 setTimeout(function () {
-  if (window.AFRAME.async) {
+  if (window.AFRAME_ASYNC) {
     return;
   }
   AEntity.ready();
