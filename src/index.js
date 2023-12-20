@@ -83,7 +83,12 @@ require('./systems/index'); // Register standard systems.
 var AScene = require('./core/scene/a-scene').AScene;
 var ANode = require('./core/a-node').ANode;
 var AEntity = require('./core/a-entity').AEntity; // Depends on ANode and core components.
-AEntity.ready();
+setTimeout(function () {
+  if (window.AFRAME.async) {
+    return;
+  }
+  AEntity.ready();
+}, 0);
 
 require('./core/a-assets');
 require('./core/a-cubemap');
@@ -107,6 +112,7 @@ module.exports = window.AFRAME = {
   components: components,
   coreComponents: Object.keys(components),
   geometries: require('./core/geometry').geometries,
+  ready: AEntity.ready.bind(AEntity),
   registerComponent: registerComponent,
   registerGeometry: registerGeometry,
   registerPrimitive: registerPrimitive,
