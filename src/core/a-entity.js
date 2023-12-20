@@ -869,10 +869,6 @@ function getRotation (entityEl) {
 AEntity.componentsUpdated = [];
 AEntity.singlePropUpdate = {};
 
-// Only define a-entity after a-scene has been defined
-// This ensures that closest
-customElements.whenDefined('a-scene').then(function () {
-  customElements.define('a-entity', AEntity);
-});
+customElements.define('a-entity', AEntity);
 
 module.exports.AEntity = AEntity;
