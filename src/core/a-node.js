@@ -85,7 +85,7 @@ class ANode extends HTMLElement {
   closestScene () {
     var element = this;
     while (element) {
-      if (element.isScene) { break; }
+      if (element.localName === 'a-scene') { break; }
       element = element.parentElement;
     }
     return element;
