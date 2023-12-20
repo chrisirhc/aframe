@@ -83,6 +83,7 @@ require('./systems/index'); // Register standard systems.
 var AScene = require('./core/scene/a-scene').AScene;
 var ANode = require('./core/a-node').ANode;
 var AEntity = require('./core/a-entity').AEntity; // Depends on ANode and core components.
+AEntity.ready();
 
 require('./core/a-assets');
 require('./core/a-cubemap');
