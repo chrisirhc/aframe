@@ -35,12 +35,6 @@ class ANode extends HTMLElement {
   onReadyStateChange () {
     if (document.readyState === 'complete') {
       this.doConnectedCallback();
-      // Call afterConnectedCallback if defined.
-      if (this.afterConnectedCallbacks) {
-        this.afterConnectedCallbacks.forEach(function (fn) {
-          fn();
-        });
-      }
     }
   }
 

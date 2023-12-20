@@ -62,7 +62,6 @@ class AScene extends AEntity {
     self.hasLoaded = false;
     self.isPlaying = false;
     self.originalHTML = self.innerHTML;
-    self.afterConnectedCallbacks = [];
   }
 
   addFullScreenStyles () {

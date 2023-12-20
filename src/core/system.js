@@ -39,10 +39,6 @@ var System = module.exports.System = function (sceneEl) {
 
   // Process system configuration.
   this.buildData();
-  if (this.init.length) {
-    this.init(function () { this.update({}); }.bind(this));
-    return;
-  }
   this.init();
   this.update({});
 };

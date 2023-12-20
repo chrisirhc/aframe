@@ -26,13 +26,6 @@ module.exports.System = registerSystem('shadow', {
 
     this.shadowMapEnabled = false;
 
-    if (!sceneEl.renderer) {
-      sceneEl.afterConnectedCallbacks.push(function () {
-        sceneEl.renderer.shadowMap.type = SHADOW_MAP_TYPE_MAP[data.type];
-        sceneEl.renderer.shadowMap.autoUpdate = data.autoUpdate;
-      });
-      return;
-    }
     sceneEl.renderer.shadowMap.type = SHADOW_MAP_TYPE_MAP[data.type];
     sceneEl.renderer.shadowMap.autoUpdate = data.autoUpdate;
   },

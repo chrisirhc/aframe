@@ -27,16 +27,12 @@ module.exports.System = registerSystem('renderer', {
     foveationLevel: {default: 1}
   },
 
-  init: function (callbackFn) {
+  init: function () {
     var data = this.data;
     var sceneEl = this.el;
     var toneMappingName = this.data.toneMapping.charAt(0).toUpperCase() + this.data.toneMapping.slice(1);
     // This is the rendering engine, such as THREE.js so copy over any persistent properties from the rendering system.
     var renderer = sceneEl.renderer;
-    if (!renderer) {
-      sceneEl.afterConnectedCallbacks.push(this.init.bind(this, callbackFn));
-      return;
-    }
 
     if (!data.physicallyCorrectLights) {
       renderer.useLegacyLights = !data.physicallyCorrectLights;
